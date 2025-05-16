@@ -513,7 +513,7 @@ class Paths
 		if(!currentTrackedSounds.exists(gottenPath)) {
 
 			var sound:Null<openfl.media.Sound> = null;
-			sound = Sound.fromFile('./' + gottenPath);
+			sound = Sound.fromFile(gottenPath);
 			//HORRID SOLUITION FOR NOW
 			if (sound.length == 0) {
 				var folder:String = '';
