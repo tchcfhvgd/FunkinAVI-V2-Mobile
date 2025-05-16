@@ -23,8 +23,6 @@
 package mobile.options;
 
 import flixel.input.keyboard.FlxKey;
-import options.BaseOptionsMenu;
-import options.Option;
 #if sys
 import sys.io.File;
 #end
