@@ -146,7 +146,6 @@
 	<!--THIS ONE IS FOR NEGLECTION SO THERE'S PROPER ACTUAL 3D :]]-->
 	<!--haxelib name="away3d" /-->
 	<haxelib name="flxanimate"/>
-	<haxelib name="extension-androidtools" if="android" />
 	<!-- <haxelib name="hxcpp-debug-server" if="desktop"/> -->
 
 	<!-- <haxelib name="markdown" /> -->

@@ -71,7 +71,9 @@ class StoryMenu extends MusicBeatState
 		transIn = FlxTransitionableState.defaultTransIn;
 		transOut = FlxTransitionableState.defaultTransOut;
 
+		#if desktop
 		DiscordClient.changePresence('Story Menu', 'Selecting Episode...');
+		#end
 
 		book = new FlxSprite().loadGraphic(Paths.image('Funkin_avi/storymenu/storyBook' + (GameData.episode1FPLock == "unlocked" ? "-evil" : "")));
 		book.scrollFactor.set(0, 0);

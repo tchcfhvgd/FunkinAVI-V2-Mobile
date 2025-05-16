@@ -578,7 +578,9 @@ class GameOverSubstate extends MusicBeatSubstate
 		PlayState.instance.vocals.volume = 0;
 		Lib.application.window.onClose.removeAll(); // goes back to normal hopefully
 		Lib.application.window.onClose.add(function() {
+			#if desktop
 			DiscordClient.shutdown();
+			#end
 		});
 
 		if(noTrans)
@@ -601,7 +603,9 @@ class GameOverSubstate extends MusicBeatSubstate
 			PlayState.pauseCountEnabled = false;
 			Lib.application.window.onClose.removeAll(); // goes back to normal hopefully
 			Lib.application.window.onClose.add(function() {
+				#if desktop
 				DiscordClient.shutdown();
+				#end
 			});
 
 			WeekData.loadTheFirstEnabledMod();

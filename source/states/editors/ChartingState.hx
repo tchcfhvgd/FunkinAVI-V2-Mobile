@@ -213,7 +213,7 @@ class ChartingState extends MusicBeatState
 
 		Lib.application.window.onClose.removeAll(); // goes back to normal hopefully
 		Lib.application.window.onClose.add(function() {
-			DiscordClient.shutdown();
+			//DiscordClient.shutdown();
 		});
 
 		// Paths.clearMemory();

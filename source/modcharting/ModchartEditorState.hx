@@ -270,7 +270,7 @@ class ModchartEditorState extends MusicBeatState
 
         Lib.application.window.onClose.removeAll(); // goes back to normal hopefully
 		Lib.application.window.onClose.add(function() {
-			DiscordClient.shutdown();
+			//DiscordClient.shutdown();
 		});
 
 		FlxG.cameras.reset(camGame);

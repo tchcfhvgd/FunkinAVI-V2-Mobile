@@ -51,7 +51,9 @@ class ControlsSubState extends MusicBeatSubstate {
 	public function new() {
 		super();
 
+		#if desktop
 		DiscordClient.changePresence("Controls Options Menu", "Changing settings...", "icon", "gear");
+		#end
 
 		var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('Funkin_avi/options/background'));
 		bg.setGraphicSize(FlxG.width, FlxG.height);

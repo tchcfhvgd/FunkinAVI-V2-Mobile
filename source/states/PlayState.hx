@@ -3058,12 +3058,14 @@ class PlayState extends MusicBeatState
 
 		precacheList.set('alphabet', 'image');
 
+		#if desktop
 		switch (FreeplayState.freeplayMenuList)
 		{
 			case 2: iconRPC = "volume1";
 			case 3: iconRPC = "volume2";
 			default: iconRPC = CoolUtil.spaceToDash(SONG.song.toLowerCase());
 		}
+		#end
 	
 		#if DISCORD_ALLOWED
 		#if DEV_BUILD
@@ -4358,7 +4360,7 @@ class PlayState extends MusicBeatState
 	
 				openSubState(new Prompt('Are you sure you want to quit?\n\nYou will lose your unsaved progress.', 0, function(){
 					System.exit(0);
-					DiscordClient.shutdown();
+					//DiscordClient.shutdown();
 				}, function(){
 					persistentUpdate = true;
 					persistentDraw = true;
@@ -5274,7 +5276,7 @@ class PlayState extends MusicBeatState
 
 			openSubState(new Prompt('Are you sure you want to quit?\n\nYour data will still save if you do.', 0, function(){
 				System.exit(0);
-				DiscordClient.shutdown();
+				//DiscordClient.shutdown();
 			}, function(){
 				persistentUpdate = true;
 				persistentDraw = true;
@@ -6840,7 +6842,7 @@ class PlayState extends MusicBeatState
 
 				Lib.application.window.onClose.removeAll(); // goes back to normal hopefully
 				Lib.application.window.onClose.add(function() {
-					DiscordClient.shutdown();
+					//DiscordClient.shutdown();
 				});
 
 				if (FreeplayState.freeplayMenuList != 3)
@@ -7455,7 +7457,7 @@ class PlayState extends MusicBeatState
 
 		Lib.application.window.onClose.removeAll(); // goes back to normal hopefully
 		Lib.application.window.onClose.add(function() {
-			DiscordClient.shutdown();
+			//DiscordClient.shutdown();
 		});
 
 		timeBarBG.visible = false;
@@ -10650,6 +10652,7 @@ class PlayState extends MusicBeatState
 						DiscordClient.changePresence("...", "...", (useFakeDeluName ? "regret" : iconRPC), "random", true, songLength - Conductor.songPosition - ClientPrefs.noteOffset);
 						#end
 						#end
+						#if desktop
 						if (isStoryMode)
 						{
 							detailsText = "Episode 1 - Regret (PEACEFUL)";
@@ -10658,6 +10661,7 @@ class PlayState extends MusicBeatState
 						{
 							detailsText = "Freeplay - Regret (PEACEFUL)";
 						}
+						#end
 						windowName = "...";
 						lime.app.Application.current.window.title = windowName;
 						boundValue = 2;
@@ -10780,6 +10784,7 @@ class PlayState extends MusicBeatState
 						}
 					case 744:
 						useFakeDeluName = false;
+						#if desktop
 						if (isStoryMode)
 						{
 							detailsText = "Episode 1 - " + SONG.song + " (" + FreeplayState.getDiffRank() + ")";
@@ -10788,6 +10793,7 @@ class PlayState extends MusicBeatState
 						{
 							detailsText = "Freeplay - " + SONG.song + " (" + FreeplayState.getDiffRank() + ")";
 						}
+						#end
 						#if DISCORD_ALLOWED
 						#if !DEV_BUILD
 						DiscordClient.changePresence(detailsText, scoreTxt.text, (useFakeDeluName ? "regret" : iconRPC), "random", true, songLength - Conductor.songPosition - ClientPrefs.noteOffset);
@@ -11091,7 +11097,7 @@ class PlayState extends MusicBeatState
 						defaultCamZoom -= 0.2;
 					case 212:
 						AppIcon.changeIcon("blessIcon");
-						CppAPI.lightMode();
+						//CppAPI.lightMode();
 						for (blessableObjects in [dad, boyfriend, vault, chains, thingy, chains, chains2, chains3, iconP1, iconP2, healthBar, healthBarBG, fancyBarOverlay])
 							blessableObjects.setColorTransform(-1, -1, -1, 1, 255, 255, 255, 0);
 						for (textShit in [songTxt, watermarkTxt, scoreTxt])
@@ -11134,7 +11140,7 @@ class PlayState extends MusicBeatState
 							textShit.borderColor = FlxColor.BLACK;
 						}
 						AppIcon.changeIcon("newIcon");
-						CppAPI.darkMode();
+						//CppAPI.darkMode();
 						var letsFight:VideoSprite = new VideoSprite(false);
 						letsFight.load(Paths.video("blessCountdown"), [VideoSprite.muted]);
 						letsFight.cameras = [camVideo];
@@ -11155,7 +11161,7 @@ class PlayState extends MusicBeatState
 						defaultCamZoom = 0.5;
 					case 480:
 						AppIcon.changeIcon("blessIcon");
-						CppAPI.lightMode();
+						//CppAPI.lightMode();
 						defaultCamZoom = 0.95;
 						camFollow.x = 0;
 						camFollow.y = 0;
@@ -11178,7 +11184,7 @@ class PlayState extends MusicBeatState
 					case 544:
 						canBopCam = false;
 						AppIcon.changeIcon("newIcon");
-						CppAPI.darkMode();
+						//CppAPI.darkMode();
 						cinematicBarControls("moveboth", 2.5, 'circOut', 0);
 						for (blessableObjects in [dad, boyfriend, vault, chains, thingy, chains, chains2, chains3, iconP1, iconP2, healthBar, healthBarBG, fancyBarOverlay])
 							FlxTween.tween(blessableObjects.colorTransform, {

@@ -231,7 +231,9 @@ class MainMenu extends MusicBeatState
 		transIn = FlxTransitionableState.defaultTransIn;
 		transOut = FlxTransitionableState.defaultTransOut;
 
+		#if desktop
 		DiscordClient.changePresence('Main Menu', 'Browsing...', 'icon', 'mouse');
+		#end
 
 		// uh
 		persistentUpdate = persistentDraw = true;
