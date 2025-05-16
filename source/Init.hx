@@ -25,7 +25,7 @@ class Init extends FlxState
 		Highscore.load();
 		GameData.loadShit();
 
-		//AppIcon.changeIcon("newIcon");
+		AppIcon.changeIcon("newIcon");
 		
 		//CoolUtil.createCoreFile();
 
@@ -47,7 +47,7 @@ class Init extends FlxState
 		FlxG.game.focusLostFramerate = 60;
 		FlxG.keys.preventDefaultKeys = [TAB];
 
-        FlxG.sound.soundTray.silent = true; // removes that annoying ass "BEEP" sound when you change the volume
+        //FlxG.sound.soundTray.silent = true; // removes that annoying ass "BEEP" sound when you change the volume
 
         #if DISCORD_ALLOWED
         DiscordClient.initialize();
