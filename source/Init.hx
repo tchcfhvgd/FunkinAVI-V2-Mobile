@@ -25,9 +25,9 @@ class Init extends FlxState
 		Highscore.load();
 		GameData.loadShit();
 
-		AppIcon.changeIcon("newIcon");
+		//AppIcon.changeIcon("newIcon");
 		
-		CoolUtil.createCoreFile();
+		//CoolUtil.createCoreFile();
 
         if (FlxG.save.data.weekCompleted != null) StoryMenuState.weekCompleted = FlxG.save.data.weekCompleted;
 
