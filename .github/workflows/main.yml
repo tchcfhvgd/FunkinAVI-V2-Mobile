@@ -59,9 +59,9 @@ jobs:
           haxelib install flixel-addons 3.2.1
           haxelib install hxvlc
           haxelib install hscript
-          haxelib install flixel-tools
+          haxelib install flixel-tools 1.5.1
           haxelib install extension-androidtools
-          haxelib install fnf-modcharting-tools
+          haxelib git fnf-modcharting-tools https://github.com/TheZoroForce240/FNF-Modcharting-Tools
           haxelib git flxanimate https://github.com/ShadowMario/flxanimate dev
           haxelib git linc_luajit https://github.com/tchcfhvgd/linc_luajit
           haxelib list
