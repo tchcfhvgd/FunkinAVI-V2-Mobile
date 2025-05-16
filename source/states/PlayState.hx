@@ -396,31 +396,31 @@ class PlayState extends MusicBeatState
 	public var camHudMoves:Bool = false;
 	public var fade:FlxSprite;
 
-	public static var grayScale:FlxRuntimeShader = new FlxRuntimeShader(Shaders.grayScale, null, 120);
-	public static var andromeda:FlxRuntimeShader = new FlxRuntimeShader(Shaders.andromedaVCR, null, 140);
-	public static var chromZoomShader:FlxRuntimeShader = new FlxRuntimeShader(Shaders.aberration, null, 150);
-	public static var chromNormalShader:FlxRuntimeShader = new FlxRuntimeShader(Shaders.aberrationDefault, null, 150);
-	public static var blurShader:FlxRuntimeShader = new FlxRuntimeShader(Shaders.tiltShift, null, 120);
-	public static var blurShaderHUD:FlxRuntimeShader = new FlxRuntimeShader(Shaders.tiltShift, null, 120);
-	public static var bloomEffect:FlxRuntimeShader = new FlxRuntimeShader(Shaders.bloom_alt, null, 120);
-	public static var dramaticCamMovement:FlxRuntimeShader = new FlxRuntimeShader(Shaders.cameraMovement, null, 150);
-	public static var monitorFilter:FlxRuntimeShader = new FlxRuntimeShader(Shaders.monitorFilter, null, 140);
-	public static var staticEffect:FlxRuntimeShader = new FlxRuntimeShader(Shaders.tvStatic, null, 120);
-	public static var delusionalShift:FlxRuntimeShader = new FlxRuntimeShader(Shaders.delusionalShift, null, 120);
+	public static var grayScale:FlxRuntimeShader = new FlxRuntimeShader(Shaders.grayScale, null, 100);
+	public static var andromeda:FlxRuntimeShader = new FlxRuntimeShader(Shaders.andromedaVCR, null, 100);
+	public static var chromZoomShader:FlxRuntimeShader = new FlxRuntimeShader(Shaders.aberration, null, 100);
+	public static var chromNormalShader:FlxRuntimeShader = new FlxRuntimeShader(Shaders.aberrationDefault, null, 100);
+	public static var blurShader:FlxRuntimeShader = new FlxRuntimeShader(Shaders.tiltShift, null, 100);
+	public static var blurShaderHUD:FlxRuntimeShader = new FlxRuntimeShader(Shaders.tiltShift, null, 100);
+	public static var bloomEffect:FlxRuntimeShader = new FlxRuntimeShader(Shaders.bloom_alt, null, 100);
+	public static var dramaticCamMovement:FlxRuntimeShader = new FlxRuntimeShader(Shaders.cameraMovement, null, 100);
+	public static var monitorFilter:FlxRuntimeShader = new FlxRuntimeShader(Shaders.monitorFilter, null, 100);
+	public static var staticEffect:FlxRuntimeShader = new FlxRuntimeShader(Shaders.tvStatic, null, 100);
+	public static var delusionalShift:FlxRuntimeShader = new FlxRuntimeShader(Shaders.delusionalShift, null, 100);
 	public static var redVignette:FlxRuntimeShader = new FlxRuntimeShader(Shaders.redFromAngryBirds, null, 120);
-	public static var waltStatic:FlxRuntimeShader = new FlxRuntimeShader(Shaders.vhsFilter, null, 130);
-	public static var heatWaveEffect:FlxRuntimeShader = new FlxRuntimeShader(Shaders.heatWave, null, 120);
-	public static var pixelizeUI:FlxRuntimeShader = new FlxRuntimeShader(Shaders.unregisteredHyperCam2Quality, null, 140);
+	public static var waltStatic:FlxRuntimeShader = new FlxRuntimeShader(Shaders.vhsFilter, null, 100);
+	public static var heatWaveEffect:FlxRuntimeShader = new FlxRuntimeShader(Shaders.heatWave, null, 100);
+	public static var pixelizeUI:FlxRuntimeShader = new FlxRuntimeShader(Shaders.unregisteredHyperCam2Quality, null, 100);
 
-	public static var malFreakG:FlxRuntimeShader = new FlxRuntimeShader(Shaders.freakyGlitch, null, 120);
-	public static var malBG:FlxRuntimeShader = new FlxRuntimeShader(Shaders.malfunctionBGEffect, null, 120);
+	public static var malFreakG:FlxRuntimeShader = new FlxRuntimeShader(Shaders.freakyGlitch, null, 100);
+	public static var malBG:FlxRuntimeShader = new FlxRuntimeShader(Shaders.malfunctionBGEffect, null, 100);
 
-	public static var legacyChrom:FlxRuntimeShader = new FlxRuntimeShader(LegacyShaders.chromaticAberration, null, 120);
-	public static var legacyDistort:FlxRuntimeShader = new FlxRuntimeShader(LegacyShaders.vcrDistortion, null, 120);
-	public static var legacyDefaultDistort:FlxRuntimeShader = new FlxRuntimeShader(LegacyShaders.vcrDistortion, null, 120);
-	public static var legacyTiltshift:FlxRuntimeShader = new FlxRuntimeShader(LegacyShaders.tiltshift, null, 120);
-	public static var legacyTiltshiftHUD:FlxRuntimeShader = new FlxRuntimeShader(LegacyShaders.tiltshift, null, 120);
-	public static var legacyGreyscale:FlxRuntimeShader = new FlxRuntimeShader(LegacyShaders.greyscale, null, 120);
+	public static var legacyChrom:FlxRuntimeShader = new FlxRuntimeShader(LegacyShaders.chromaticAberration, null, 100);
+	public static var legacyDistort:FlxRuntimeShader = new FlxRuntimeShader(LegacyShaders.vcrDistortion, null, 100);
+	public static var legacyDefaultDistort:FlxRuntimeShader = new FlxRuntimeShader(LegacyShaders.vcrDistortion, null, 100);
+	public static var legacyTiltshift:FlxRuntimeShader = new FlxRuntimeShader(LegacyShaders.tiltshift, null, 100);
+	public static var legacyTiltshiftHUD:FlxRuntimeShader = new FlxRuntimeShader(LegacyShaders.tiltshift, null, 100);
+	public static var legacyGreyscale:FlxRuntimeShader = new FlxRuntimeShader(LegacyShaders.greyscale, null, 100);
 
 	public var chromEffect:Float = 0.0001;
 	public var blurEffect:Float = 0.0;
@@ -494,7 +494,7 @@ class PlayState extends MusicBeatState
 	   
 
 	//HUNTED FNF
-	var wobblyBG:FlxRuntimeShader = new FlxRuntimeShader(Shaders.acidTrip, null, 120);
+	var wobblyBG:FlxRuntimeShader = new FlxRuntimeShader(Shaders.acidTrip, null, 100);
 	var treesFront:FlxSprite;
 	var goofyStreet:FlxSprite;
 	var treesBack:FlxSprite;
@@ -1543,8 +1543,8 @@ class PlayState extends MusicBeatState
 	
 					accessPath = SONG.song == 'Malfunction Legacy' ? 'PixelMouse' : 'malfunctionBG-NEW';
 					
-					staticBG = new FlxRuntimeShader(Shaders.tvStatic, null, 120);
-					glitchBG = new FlxRuntimeShader(Shaders.vignetteGlitch, null, 130);
+					staticBG = new FlxRuntimeShader(Shaders.tvStatic, null, 100);
+					glitchBG = new FlxRuntimeShader(Shaders.vignetteGlitch, null, 100);
 	
 					fuckingsquares = new FlxSprite(-750, -850);
 					fuckingsquares.loadGraphic(Paths.image(pathway + accessPath));
@@ -1768,7 +1768,7 @@ class PlayState extends MusicBeatState
 					add(bg);
 					bg.animation.play("lmao");
 	
-					totallyAwsomeShader = new FlxRuntimeShader(Shaders.unregisteredHyperCam2Quality, null, 140);
+					totallyAwsomeShader = new FlxRuntimeShader(Shaders.unregisteredHyperCam2Quality, null, 100);
 					totallyAwsomeShader.setFloat('size', 7.5);
 					if(ClientPrefs.shaders) 
 						for (cam in [camGame, camNotes, camHUD])
@@ -1780,7 +1780,7 @@ class PlayState extends MusicBeatState
 					cameraSpeed = 0.9;
 	
 					//Phase 2 shaders
-					glitchBG = new FlxRuntimeShader(Shaders.vignetteGlitch, null, 130);
+					glitchBG = new FlxRuntimeShader(Shaders.vignetteGlitch, null, 100);
 	
 					bg1 = new FlxSprite(0, 50);
 					if (SONG.song == "Cycled Sins Legacy") 
@@ -3493,7 +3493,7 @@ class PlayState extends MusicBeatState
 		#end
 	}
 
-	public function initLuaShader(name:String, ?glslVersion:Int = 120)
+	public function initLuaShader(name:String, ?glslVersion:Int = 100)
 	{
 		if(!ClientPrefs.shaders) return false;
 

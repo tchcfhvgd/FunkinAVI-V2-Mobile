@@ -3,6 +3,15 @@ package backend.data;
 import flixel.input.keyboard.FlxKey;
 
 class ClientPrefs {
+	// Mobile and Mobile Controls Releated
+	public static var extraButtons:String = "NONE"; // mobile extra button option
+	public static var hitboxPos:Bool = true; // hitbox extra button position option
+	public static var controlsAlpha:Float = FlxG.onMobile ? 0.6 : 0;
+	public static var screensaver:Bool = false;
+	#if android
+	public static var storageType:String = "EXTERNAL_DATA";
+	#end
+	public static var hitboxType:String = "Gradient";
 	public static var downScroll:Bool = false;
 	public static var middleScroll:Bool = false;
 	public static var opponentStrums:Bool = true;
@@ -100,6 +109,15 @@ class ClientPrefs {
 		var settings:FlxSave = new FlxSave();
 		settings.bind('settings', CoolUtil.getSavePath());
 
+		settings.data.extraButtons = extraButtons;
+		settings.data.hitboxPos = hitboxPos;
+		settings.data.controlsAlpha = controlsAlpha;
+		settings.data.screensaver = screensaver;
+		#if android
+		settings.data.storageType = storageType;
+		#end
+		settings.data.hitboxType = hitboxType;
+		
 		settings.data.downScroll = downScroll;
 		settings.data.middleScroll = middleScroll;
 		settings.data.opponentStrums = opponentStrums;
@@ -152,6 +170,27 @@ class ClientPrefs {
 	public static function loadPrefs() {
 		var settings:FlxSave = new FlxSave();
 		settings.bind('settings', CoolUtil.getSavePath());
+		
+		if(settings.data.extraButtons != null) {
+			extraButtons = settings.data.extraButtons;
+		}
+		if(settings.data.hitboxPos != null) {
+			hitboxPos = settings.data.hitboxPos;
+		}
+		if(settings.data.controlsAlpha != null) {
+			controlsAlpha = settings.data.controlsAlpha;
+		}
+		if(settings.data.screensaver != null) {
+			screensaver = settings.data.screensaver;
+		}
+		#if android
+		if(settings.data.storageType != null) {
+			storageType = settings.data.storageType;
+		}
+		#end
+		if(settings.data.hitboxType != null) {
+			hitboxType = settings.data.hitboxType;
+		}
 		
 		if(settings.data.downScroll != null) {
 			downScroll = settings.data.downScroll;

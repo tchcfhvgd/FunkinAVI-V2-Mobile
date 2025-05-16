@@ -17,6 +17,8 @@
 
  // just in case
  import unused.*;
+ 
+import mobile.StorageUtil;
 
  // import objects, menus and backend support
 import backend.*;
