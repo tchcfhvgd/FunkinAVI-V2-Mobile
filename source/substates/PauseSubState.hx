@@ -490,7 +490,6 @@ class FAVIPauseSubState extends MusicBeatSubstate
 
 			// Will use your discord username if you're connected while playing lmao
 			//if (DiscordClient.isInitialized && DiscordClient.discordName != "None")
-				//yourName = DiscordClient.discordName;
 
 			satanQuotes = [
 				"No, it is forbidden...",
@@ -499,17 +498,17 @@ class FAVIPauseSubState extends MusicBeatSubstate
 				"You've come too far to leave now...",
 				"The fun has just begun...",
 				"Don't be afraid of a little mouse...",
-				"Stay right where you are, " + yourName + "...",
+				"Stay right where you are, " + "...",
 				"He's already died many times...",
 				"What difference will you leaving do?",
 				"Leaving so soon?",
-				"Something wrong, " + yourName + "?",
+				"Something wrong, " + "?",
 				"Are you scared?",
 				"You've seen too much, I won't let you go yet...",
 				"Do you know who I am?",
-				"You're a coward, " + yourName + "...",
+				"You're a coward, " + "...",
 				"Not so fast, friend...",
-				"Not so fast, " + yourName + "...",
+				"Not so fast, " + "...",
 				"Why leave so soon? You'll be back. *And we'll be waiting...*"
 			];
 	
