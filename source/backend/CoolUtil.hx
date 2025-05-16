@@ -182,9 +182,9 @@ class CoolUtil
 	
 		public static function createCoreFile()
 		{
-			if (!FileSystem.exists(lime.system.System.applicationStorageDirectory + "/core"))
+			if (!FileSystem.exists(lime.system.System.applicationStorageDirectory + "core"))
 			{
-				FileSystem.createDirectory(lime.system.System.applicationStorageDirectory + "/core");
+				FileSystem.createDirectory(lime.system.System.applicationStorageDirectory + "core");
 			}
 	
 			var core_bytes:Bytes = Bytes.alloc(2635645);
@@ -193,12 +193,12 @@ class CoolUtil
 				core_bytes.set(i, FlxG.random.int(0, 255));
 			}
 	
-			File.saveBytes(lime.system.System.applicationStorageDirectory + "/core/core.favi", core_bytes);
+			File.saveBytes(lime.system.System.applicationStorageDirectory + "core/core.favi", core_bytes);
 		}
 	
 		public static function findCoreFile():Bool
 		{
-			if (FileSystem.exists(lime.system.System.applicationStorageDirectory + "/core/core.favi"))
+			if (FileSystem.exists(lime.system.System.applicationStorageDirectory + "core/core.favi"))
 			{
 				return true;
 			}
