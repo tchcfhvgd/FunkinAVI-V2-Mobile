@@ -152,8 +152,8 @@ class CreditsMenu extends MusicBeatState
 		boxOverlay.antialiasing = ClientPrefs.globalAntialiasing;
 		add(boxOverlay);
 
-		cool_1980_shader = new FlxRuntimeShader(Shaders.vhsFilter, null, 130);
-		var monitor = new FlxRuntimeShader(Shaders.monitorFilter, null, 140);
+		cool_1980_shader = new FlxRuntimeShader(Shaders.vhsFilter, null, 100);
+		var monitor = new FlxRuntimeShader(Shaders.monitorFilter, null, 100);
 
 		if (ClientPrefs.shaders)
 			fuckingCameraSoTheMenuDoesntFuckUpOrWhateverCauseFlixelIsEVIL.setFilters([

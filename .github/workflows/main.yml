@@ -51,8 +51,8 @@ jobs:
       - name: Install Haxelib
         run: |
           haxelib setup ~/haxelib
-          haxelib git hxcpp https://github.com/MobilePorting/hxcpp
-          haxelib git lime https://github.com/MobilePorting/lime
+          haxelib git hxcpp https://github.com/beihu235/hxcpp
+          haxelib git lime https://github.com/beihu235/lime
           haxelib install openfl 9.3.3
           haxelib install flixel 5.5.0
           haxelib install flixel-ui 2.5.0
@@ -60,9 +60,10 @@ jobs:
           haxelib install hxvlc
           haxelib install hscript
           haxelib install flixel-tools
+          haxelib install extension-androidtools
           haxelib install fnf-modcharting-tools
           haxelib git flxanimate https://github.com/ShadowMario/flxanimate dev
-          haxelib git linc_luajit https://github.com/MobilePorting/linc_luajit
+          haxelib git linc_luajit https://github.com/tchcfhvgd/linc_luajit
           haxelib list
       
       - name: Setup Lime
@@ -72,7 +73,6 @@ jobs:
           haxelib run lime config ANDROID_NDK_ROOT ${{ steps.setup-ndk.outputs.ndk-path }}
           haxelib run lime config JAVA_HOME $JAVA_HOME_17_X64
           haxelib run lime config ANDROID_SETUP true
-          haxelib set flixel 6.0.0
           
       - name: Compile
         run: haxelib run lime build android

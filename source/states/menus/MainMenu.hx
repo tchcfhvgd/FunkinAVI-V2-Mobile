@@ -195,9 +195,9 @@ class MainMenu extends MusicBeatState
 
 		if (ClientPrefs.shaders)
 		{
-			defaultShader = new FlxRuntimeShader(Shaders.grayScale, null, 140);
-			defaultShader2 = new FlxRuntimeShader(Shaders.monitorFilter, null, 140);
-			darkFilter = new FlxRuntimeShader(Shaders.dimScreen, null, 120);
+			defaultShader = new FlxRuntimeShader(Shaders.grayScale, null, 100);
+			defaultShader2 = new FlxRuntimeShader(Shaders.monitorFilter, null, 100);
+			darkFilter = new FlxRuntimeShader(Shaders.dimScreen, null, 100);
 
 			if (!ClientPrefs.shaders)
 			{

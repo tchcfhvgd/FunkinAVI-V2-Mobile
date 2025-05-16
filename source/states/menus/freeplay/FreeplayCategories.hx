@@ -27,7 +27,7 @@ class FreeplayCategories extends MusicBeatState {
 	var backdrop:FlxBackdrop;
 	var defaultShader2:FlxRuntimeShader;
 
-	var arrowFlash:FlxRuntimeShader = new FlxRuntimeShader(Shaders.flashyFlash, null, 120);
+	var arrowFlash:FlxRuntimeShader = new FlxRuntimeShader(Shaders.flashyFlash, null, 100);
 	var flashThing:Float = 0;
 
 	var selectTween:FlxTween;
@@ -51,7 +51,7 @@ class FreeplayCategories extends MusicBeatState {
 
 		AppIcon.changeIcon("newIcon");
 		
-		defaultShader2 = new FlxRuntimeShader(Shaders.monitorFilter, null, 140);
+		defaultShader2 = new FlxRuntimeShader(Shaders.monitorFilter, null, 100);
 		FlxG.camera.setFilters(
 			[
 				new openfl.filters.ShaderFilter(defaultShader2)

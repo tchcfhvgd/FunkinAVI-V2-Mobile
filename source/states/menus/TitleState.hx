@@ -196,7 +196,7 @@ class TitleState extends MusicBeatState
 		Application.current.window.title = 'Funkin.avi - ${windowArray[FlxG.random.int(0, windowArray.length-1)]}';
 		AppIcon.changeIcon("newIcon");
 
-		defaultShader2 = new FlxRuntimeShader(Shaders.monitorFilter, null, 140);
+		defaultShader2 = new FlxRuntimeShader(Shaders.monitorFilter, null, 100);
 		if(ClientPrefs.shaders)
 			{
 				FlxG.camera.setFilters(

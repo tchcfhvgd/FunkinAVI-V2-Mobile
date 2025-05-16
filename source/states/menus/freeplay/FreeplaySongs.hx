@@ -103,11 +103,11 @@ class FreeplaySongs extends MusicBeatState
 		{
 			case 0: // Story Songs Menu
 				{
-					smilesShader = new FlxRuntimeShader(Shaders.tvStatic, null, 120);
-					defaultShader2 = new FlxRuntimeShader(Shaders.monitorFilter, null, 140);
-					mercyShader = new FlxRuntimeShader(Shaders.vhsFilter, null, 130);
-					mercyShader2 = new FlxRuntimeShader(Shaders.cameraMovement, null, 150);
-					chromAberration = new FlxRuntimeShader(Shaders.aberration, null, 150);
+					smilesShader = new FlxRuntimeShader(Shaders.tvStatic, null, 100);
+					defaultShader2 = new FlxRuntimeShader(Shaders.monitorFilter, null, 100);
+					mercyShader = new FlxRuntimeShader(Shaders.vhsFilter, null, 100);
+					mercyShader2 = new FlxRuntimeShader(Shaders.cameraMovement, null, 100);
+					chromAberration = new FlxRuntimeShader(Shaders.aberration, null, 100);
 					chromAberration.setFloat('aberration', 0.07);
 					chromAberration.setFloat('effectTime', 0.005);
 
@@ -134,18 +134,18 @@ class FreeplaySongs extends MusicBeatState
 				}
 			case 1: // Extras Menu
 				{		
-					getBlessed = new FlxRuntimeShader(Shaders.bloom, null, 120);
-					glitchyStuff = new FlxRuntimeShader(Shaders.vignetteGlitch, null, 130);
-					chromAberration = new FlxRuntimeShader(Shaders.aberration, null, 150);
+					getBlessed = new FlxRuntimeShader(Shaders.bloom, null, 100);
+					glitchyStuff = new FlxRuntimeShader(Shaders.vignetteGlitch, null, 100);
+					chromAberration = new FlxRuntimeShader(Shaders.aberration, null, 100);
 					chromAberration.setFloat('aberration', 0.07);
 					chromAberration.setFloat('effectTime', 0.005);
-					mercyShader = new FlxRuntimeShader(Shaders.vhsFilter, null, 130);
-					mercyShader2 = new FlxRuntimeShader(Shaders.cameraMovement, null, 150);
-					urFucked = new FlxRuntimeShader(Shaders.theBlurOf87, null, 150);
+					mercyShader = new FlxRuntimeShader(Shaders.vhsFilter, null, 100);
+					mercyShader2 = new FlxRuntimeShader(Shaders.cameraMovement, null, 100);
+					urFucked = new FlxRuntimeShader(Shaders.theBlurOf87, null, 100);
 					urFucked.setFloat('amount', 1);
-					smilesShader = new FlxRuntimeShader(Shaders.tvStatic, null, 120);
-					defaultShader2 = new FlxRuntimeShader(Shaders.monitorFilter, null, 140);
-					pixelShader = new FlxRuntimeShader(Shaders.unregisteredHyperCam2Quality, null, 140);
+					smilesShader = new FlxRuntimeShader(Shaders.tvStatic, null, 100);
+					defaultShader2 = new FlxRuntimeShader(Shaders.monitorFilter, null, 100);
+					pixelShader = new FlxRuntimeShader(Shaders.unregisteredHyperCam2Quality, null, 100);
 					pixelShader.setFloat('size', 7.5);
 
 					if (GameData.episode1FPLock == 'unlocked')
