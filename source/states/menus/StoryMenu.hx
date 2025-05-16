@@ -173,6 +173,15 @@ class StoryMenu extends MusicBeatState
 		changeWeek();
 		changeDifficulty();
 		updateText();
+		
+		addTouchPad("LEFT_FULL", "A_B_C");
+	}
+	
+	override function closeSubState() {
+		persistentUpdate = true;
+		removeTouchPad();
+		addTouchPad("LEFT_FULL", "A_B_C");
+		super.closeSubState();
 	}
 
 	inline function checkProgression(week:String):Bool
@@ -245,9 +254,8 @@ class StoryMenu extends MusicBeatState
 					changeDifficulty(); // nothing special, just in case
 				}
 
-				else if(controls.RESET)
-				{
-					persistentUpdate = false;
+				else if(controls.RESET || touchPad.buttonC.justPressed)				{
+					touchPad.active = touchPad.visible = persistentUpdate = false;
 					openSubState(new ResetScoreSubState('', curDifficulty, '', curWeek));
 					//FlxG.sound.play(Paths.sound('scrollMenu'));
 				}

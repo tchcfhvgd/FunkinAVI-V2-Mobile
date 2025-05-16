@@ -20,6 +20,10 @@ class OptionsState extends MusicBeatState
 
 	function openSelectedSubstate(label:String)
 	{
+		if (label != "Adjust Delay and Combo"){
+			persistentUpdate = false;
+			removeTouchPad();
+		}
 		switch (label)
 		{
 			case 'Preferences':
@@ -116,11 +120,16 @@ class OptionsState extends MusicBeatState
 		ClientPrefs.saveSettings();
 
 		super.create();
+		
+		addTouchPad("LEFT_RIGHT", "A_B_X_Y");
 	}
 
 	override function closeSubState()
 	{
 		super.closeSubState();
+		persistentUpdate = true;
+		removeTouchPad();
+		addTouchPad("UP_DOWN", "A_B_X_Y");
 		ClientPrefs.saveSettings();
 	}
 
@@ -137,14 +146,6 @@ class OptionsState extends MusicBeatState
 			changeSelection(1);
 		}
 
-		if (FlxG.mouse.justPressed)
-		{
-			if (FlxG.mouse.overlaps(art))
-			{
-				openSelectedSubstate(options[curSelected]);
-			}
-		}
-
 		if (controls.BACK)
 		{
 			FlxG.sound.play(Paths.sound('cancelMenu'));
@@ -159,6 +160,16 @@ class OptionsState extends MusicBeatState
 		if (controls.ACCEPT)
 		{
 			openSelectedSubstate(options[curSelected]);
+		}
+		
+		if (touchPad != null && touchPad.buttonX.justPressed) {
+			touchPad.active = touchPad.visible = persistentUpdate = false;
+			openSubState(new mobile.MobileControlSelectSubState());
+		}
+		
+		if (touchPad != null && touchPad.buttonY.justPressed) {
+			touchPad.active = touchPad.visible = persistentUpdate = false;
+			openSubState(new mobile.options.MobileOptionsSubState());
 		}
 	}
 

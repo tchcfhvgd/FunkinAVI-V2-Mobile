@@ -33,6 +33,8 @@ class FlashingState extends MusicBeatState
 
 		var vignette:FlxSprite = new FlxSprite().loadGraphic(Paths.image("Funkin_avi/warning/warningVignette"));
 		add(vignette);
+		
+		addTouchPad("NONE", "A");
 	}
 
 	override function update(elapsed:Float)

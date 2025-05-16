@@ -176,6 +176,9 @@ class WarningSettings extends MusicBeatState {
 
         changeSelection();
 		reloadCheckboxes();
+		
+		addTouchPad("LEFT_FULL", "A_B_C");
+		addTouchPadCamera();
     }
 
     public function addOption(option:Option) {
@@ -301,7 +304,7 @@ class WarningSettings extends MusicBeatState {
                     }
                 }
 
-                if(controls.RESET)
+                if(controls.RESET || touchPad.buttonC.justPressed)
                 {
                     for (i in 0...optionsArray.length)
                     {

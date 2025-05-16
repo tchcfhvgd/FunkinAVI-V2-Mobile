@@ -140,6 +140,9 @@ class GameplayChangersSubstate extends MusicBeatSubstate
 		reloadCheckboxes();
 
 		cameras = [FlxG.cameras.list[FlxG.cameras.list.length-1]];
+		
+		addTouchPad("LEFT_FULL", "A_B_C");
+		addTouchPadCamera();
 	}
 
 	var nextAccept:Int = 5;
@@ -270,7 +273,7 @@ class GameplayChangersSubstate extends MusicBeatSubstate
 				}
 			}
 
-			if(controls.RESET)
+			if(controls.RESET || touchPad.buttonC.justPressed)
 			{
 				for (i in 0...optionsArray.length)
 				{

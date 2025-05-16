@@ -147,6 +147,9 @@ class PauseSubState extends MusicBeatSubstate
 
 		regenMenu();
 		cameras = [FlxG.cameras.list[FlxG.cameras.list.length - 1]];
+		
+		addTouchPad(PlayState.chartingMode ? "LEFT_FULL" : "UP_DOWN", "A");
+		addTouchPadCamera();
 	}
 
 	var holdTime:Float = 0;
@@ -663,6 +666,9 @@ class FAVIPauseSubState extends MusicBeatSubstate
 			changeSelection();
 			lime.app.Application.current.window.title += " - {Paused}";
 			cameras = [FlxG.cameras.list[FlxG.cameras.list.length - 1]];
+			
+			addTouchPad(PlayState.chartingMode ? "LEFT_FULL" : "UP_DOWN", "A");
+		addTouchPadCamera();
 		}
 	
 		var arrowX:Float = 0;

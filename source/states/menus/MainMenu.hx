@@ -452,7 +452,7 @@ class MainMenu extends MusicBeatState
 			});
 		}*/
 
-		if (!sys.FileSystem.exists('./assets/shared/images/favi/stages/forbiddenRealm/DO NOT TOUCH MY MEME.png') && GameData.check(NO_MALFUNCTION))
+		if (!sys.FileSystem.exists('assets/shared/images/favi/stages/forbiddenRealm/DO NOT TOUCH MY MEME.png') && GameData.check(NO_MALFUNCTION))
 		{
 			selectedSomethin = true;
 			new FlxTimer().start(0.4, function(tmr:FlxTimer)

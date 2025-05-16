@@ -36,6 +36,8 @@ class Init extends FlxState
 		cpp.NativeGc.enable(true);
 		cpp.NativeGc.run(true);
 		#end
+		
+		mobile.MobileData.init();
 
         FlxG.sound.muteKeys = muteKeys;
 		FlxG.sound.volumeDownKeys = volumeDownKeys;

@@ -412,6 +412,9 @@ class GameOverSubstate extends MusicBeatSubstate
 		camFollowPos = new FlxObject(0, 0, 1, 1);
 		camFollowPos.setPosition(stupidAssCam.scroll.x + (stupidAssCam.width / 2), stupidAssCam.scroll.y + (stupidAssCam.height / 2));
 		add(camFollowPos);
+		
+		addTouchPad("LEFT_FULL", "A_B");
+		addTouchPadCamera();
 	}
 
 	var quitLerp:Float = 0.5;
