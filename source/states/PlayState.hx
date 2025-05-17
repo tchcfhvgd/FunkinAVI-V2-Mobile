@@ -5208,6 +5208,10 @@ class PlayState extends MusicBeatState
 			for (timer in modchartTimers) {
 				timer.active = false;
 			}
+			
+			#if VIDEOS_ALLOWED
+			forEachOfType(VideoSprite, video -> if (video != null) video.pause(), true);
+			#end
 		}
 
 		super.openSubState(SubState);
@@ -5253,6 +5257,10 @@ class PlayState extends MusicBeatState
 			for (timer in modchartTimers) {
 				timer.active = true;
 			}
+			
+			#if VIDEOS_ALLOWED
+			forEachOfType(VideoSprite, video -> if (video != null) video.resume(), true);
+			#end
 			paused = false;
 			callOnLuas('onResume', []);
 

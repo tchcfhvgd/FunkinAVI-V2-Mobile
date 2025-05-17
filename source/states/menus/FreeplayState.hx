@@ -536,11 +536,17 @@ class FreeplayState extends MusicBeatState
 			Conductor.bpm = 98;
 
 		super.create();
+		
+		addTouchPad("LEFT_FULL", "A_B_C_X_Y_Z");
+		addTouchPadCamera();
 	}
 
 	override function closeSubState() {
 		changeSelection(0, false);
 		persistentUpdate = true;
+		removeTouchPad();
+		addTouchPad("LEFT_FULL", "A_B_C_X_Y_Z");
+		addTouchPadCamera();
 		super.closeSubState();
 	}
 
@@ -650,11 +656,11 @@ class FreeplayState extends MusicBeatState
 		var upP = freeplayMenuList == 2 ? controls.UI_UP_P : controls.UI_LEFT_P;
 		var downP = freeplayMenuList == 2 ? controls.UI_DOWN_P : controls.UI_RIGHT_P;
 		var accepted = controls.ACCEPT;
-		var space = FlxG.keys.justPressed.SPACE;
-		var ctrl = FlxG.keys.justPressed.CONTROL;
+		var space = FlxG.keys.justPressed.SPACE || touchPad.buttonX.justPressed;
+		var ctrl = FlxG.keys.justPressed.CONTROL || touchPad.buttonC.justPressed;
 
 		var shiftMult:Int = 1;
-		if(FlxG.keys.pressed.SHIFT) shiftMult = 3;
+		if(FlxG.keys.pressed.SHIFT || touchPad.buttonZ.pressed) shiftMult = 3;
 
 		if(songs.length > 1)
 		{
@@ -767,9 +773,9 @@ class FreeplayState extends MusicBeatState
 
 			FlxG.sound.music.volume = 0;
 		}
-		else if(controls.RESET)
+		else if(controls.RESET || touchPad.buttonY.justPressed)
 		{
-			persistentUpdate = false;
+			touchPad.active = touchPad.visible = persistentUpdate = false;
 			openSubState(new ResetScoreSubState(songs[curSelected].songName, curDifficulty, songs[curSelected].songCharacter));
 			FlxG.sound.play(Paths.sound('funkinAVI/menu/scrollSfx'));
 		}
