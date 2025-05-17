@@ -105,7 +105,6 @@ enum abstract LegacyShaders(String) from String to String
 		}";
 
     var vcrDistortion = "
-  "
   #pragma header
 
     uniform float iTime;
