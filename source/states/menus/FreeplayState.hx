@@ -538,7 +538,7 @@ class FreeplayState extends MusicBeatState
 		super.create();
 		
 		addTouchPad("LEFT_FULL", "A_B_C_X_Y_Z");
-		//addTouchPadCamera();
+		addTouchPadCamera();
 	}
 
 	override function closeSubState() {
@@ -546,7 +546,7 @@ class FreeplayState extends MusicBeatState
 		persistentUpdate = true;
 		removeTouchPad();
 		addTouchPad("LEFT_FULL", "A_B_C_X_Y_Z");
-		//addTouchPadCamera();
+		addTouchPadCamera();
 		super.closeSubState();
 	}
 

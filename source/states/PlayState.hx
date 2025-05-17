@@ -2308,8 +2308,15 @@ class PlayState extends MusicBeatState
 
 		switch (SONG.song)
 		{
-		case "Devilish Deal" | "Isolated" | "Lunacy" | "Delusional": 
+		case "Mercy" | "Mercy Legacy" | "Cycled Sins" | "Cycled Sins Legacy":
+		qqqeb = true;
+		case "Devilish Deal" | "Isolated" | "Lunacy" | "Delusional" | "Twisted Grins" | "Cycled Sins" | "Hunted" | "Laugh Track" | "The Wretched Tilezones (Simple Life)" | "Ship the Fart Yay Hooray <3 (Distant Stars)" | "Ahh the Scary (Somber Night)" | "Cycled Sins" | "Cycled Sins Legacy"  | "Birthday": 
 		qqqeb2 = true;
+		case "Isolated Old" | "Isolated Beta" | "Isolated Legacy" | "Lunacy Legacy" | "Delusional Legacy" | "Hunted Legacy":
+		if(ClientPrefs.shaders)
+		qqqeb2 = true;
+		case "Mercy":
+		qqqeb3 = true;	
 		}
 		
 		#if !android
