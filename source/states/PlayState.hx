@@ -5597,7 +5597,7 @@ class PlayState extends MusicBeatState
 				skipLerp = 1.0;
 			}
 	
-			if (FlxG.keys.justPressed.SPACE || MusicBeatState.getState().mobileControls.buttonExtra.justPressed)
+			if (FlxG.keys.justPressed.SPACE || #if android FlxG.android.justReleased.BACK #end)
 			{
 				skipDial.amount += 0.1;
 			}
