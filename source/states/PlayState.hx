@@ -168,6 +168,9 @@ class PlayState extends MusicBeatState
 	public var camZoomingMult:Float = 1;
 	public var camZoomingDecay:Float = 1;
 	private var curSong:String = "";
+	public static var qqqeb:Bool = false; //躲避键
+	public static var qqqeb2:Bool = false; //hitbox变黑白色
+	public static var qqqeb3:Bool = false; //hitbox变为黄色
 
 	public var gfSpeed:Int = 1;
 	public var healthThing:Float = 1;
@@ -411,7 +414,7 @@ class PlayState extends MusicBeatState
 	public static var monitorFilter:FlxRuntimeShader = new FlxRuntimeShader(Shaders.monitorFilter, null, 100);
 	public static var staticEffect:FlxRuntimeShader = new FlxRuntimeShader(Shaders.tvStatic, null, 100);
 	public static var delusionalShift:FlxRuntimeShader = new FlxRuntimeShader(Shaders.delusionalShift, null, 100);
-	public static var redVignette:FlxRuntimeShader = new FlxRuntimeShader(Shaders.redFromAngryBirds, null, 120);
+	public static var redVignette:FlxRuntimeShader = new FlxRuntimeShader(Shaders.redFromAngryBirds, null, 100);
 	public static var waltStatic:FlxRuntimeShader = new FlxRuntimeShader(Shaders.vhsFilter, null, 100);
 	public static var heatWaveEffect:FlxRuntimeShader = new FlxRuntimeShader(Shaders.heatWave, null, 100);
 	public static var pixelizeUI:FlxRuntimeShader = new FlxRuntimeShader(Shaders.unregisteredHyperCam2Quality, null, 100);
@@ -2303,6 +2306,12 @@ class PlayState extends MusicBeatState
 
 		// startCountdown();
 
+		switch (SONG.song)
+		{
+		case "Devilish Deal" | "Isolated" | "Lunacy" | "Delusional": 
+		qqqeb2 = true;
+		}
+		
 		#if !android
 		addTouchPad("NONE", "P");
 		addTouchPadCamera();
@@ -5588,7 +5597,7 @@ class PlayState extends MusicBeatState
 				skipLerp = 1.0;
 			}
 	
-			if (FlxG.keys.justPressed.SPACE)
+			if (FlxG.keys.justPressed.SPACE || MusicBeatState.getState().mobileControls.buttonExtra.justPressed)
 			{
 				skipDial.amount += 0.1;
 			}
@@ -6688,7 +6697,7 @@ class PlayState extends MusicBeatState
 		{
 			if (!isAutoplay)
 			{
-				if (FlxG.keys.justPressed.SPACE)
+				if (FlxG.keys.justPressed.SPACE || MusicBeatState.getState().mobileControls.buttonExtra.justPressed)
 				{
 					/*
 					* This set is for song-specific gimmicks
@@ -9147,6 +9156,10 @@ class PlayState extends MusicBeatState
 		FlxAnimationController.globalSpeed = 1;
 		inst.pitch = 1;
 		super.destroy();
+		
+		qqqeb = false;
+		qqqeb2 = false;
+		qqqeb3 = false;
 	}
 
 	public static function cancelMusicFadeTween() {

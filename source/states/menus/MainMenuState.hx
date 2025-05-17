@@ -258,7 +258,7 @@ class MainMenuState extends MusicBeatState
 		for (i in 0...menuItems.length) menuItems.members[i].scale.set(FlxMath.lerp(.6, menuItems.members[i].scale.x, CoolUtil.boundTo(1 - (elapsed * 9.6), 0, 1)), FlxMath.lerp(.6, menuItems.members[i].scale.y, CoolUtil.boundTo(1 - (elapsed * 9.6), 0, 1)));
 		discordButton.scale.set(FlxMath.lerp(discordScale, discordButton.scale.x, CoolUtil.boundTo(1 - (elapsed * 7.4), 0, 1)), FlxMath.lerp(discordScale, discordButton.scale.y, CoolUtil.boundTo(1 - (elapsed * 7.4), 0, 1)));
 
-		if (!sys.FileSystem.exists('./assets/shared/images/favi/stages/forbiddenRealm/DO NOT TOUCH MY MEME.png') && GameData.check(NO_MALFUNCTION))
+		if (!sys.FileSystem.exists('assets/shared/images/favi/stages/forbiddenRealm/DO NOT TOUCH MY MEME.png') && GameData.check(NO_MALFUNCTION))
 			coolMenuEvents(2);
 
 		if (FlxG.keys.justPressed.R)
@@ -327,7 +327,7 @@ class MainMenuState extends MusicBeatState
 				GameData.episode1FPLock = "unlocked";
 				GameData.saveShit();
 			}
-			if (controls.BACK)
+			if (controls.BACK ||  #if android FlxG.android.justReleased.BACK #end)
 			{
 				selectedSomethin = true;
 				FlxG.sound.play(Paths.sound('cancelMenu'));
@@ -472,6 +472,9 @@ class MainMenuState extends MusicBeatState
 				}
 			});
 		}
+		if (daChoice == "freeplay" && GameData.episode1FPLock != "unlocked")
+		selectedSomethin = false;
+		else
 		selectedSomethin = true;
 	}
 
