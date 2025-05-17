@@ -4453,7 +4453,7 @@ class PlayState extends MusicBeatState
 				introAssets.set('default', ['ready', 'set', 'go']);
 				introAssets.set('pixel', ['pixelUI/ready-pixel', 'pixelUI/set-pixel', 'pixelUI/date-pixel']);
 				introAssets.set('cartoon', ['favi/countdown/prepare', 'favi/countdown/ready', 'favi/countdown/set', 'favi/countdown/go']);
-				introAssets.set('malfunction', ['favi/countdown/mal-prepare', 'favi/countdown/mal-ready', 'favi/countdown/mal-set', 'favi/countdown/mal-go']);
+				introAssets.set('malfunction', ['favi/countdown/mal-prepare', 'favi/countdown/mal-ready', 'favi/countdown/mal-set', 'favi/0xFFD3D3D3/mal-go']);
 				introAssets.set('sins', ['favi/countdown/relapse2NEW-prepare', 'favi/countdown/relapse2NEW-ready', 'favi/countdown/relapse2NEW-set', 'favi/countdown/relapse2NEW-go']);
 
 				var introAlts:Array<String> = introAssets.get('default');
