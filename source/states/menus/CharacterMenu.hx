@@ -59,6 +59,7 @@ class CharacterMenu extends MusicBeatState
         character.screenCenter().x -= 300;
         character.setGraphicSize(Std.int(character.width * 0.75));
         character.angle = 6;
+	character.camera = hud;
         character.antialiasing = ClientPrefs.globalAntialiasing;
         add(character);
 
