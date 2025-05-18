@@ -170,7 +170,6 @@ class PlayState extends MusicBeatState
 	private var curSong:String = "";
 	public static var qqqeb:Bool = false; //躲避键
 	public static var qqqeb2:Bool = false; //hitbox变黑白色
-	public static var qqqeb3:Bool = false; //hitbox变为黄色
 
 	public var gfSpeed:Int = 1;
 	public var healthThing:Float = 1;
@@ -2308,15 +2307,13 @@ class PlayState extends MusicBeatState
 
 		switch (SONG.song)
 		{
+		case "Mercy" | "Mercy Legacy" | "Cycled Sins" | "Cycled Sins Legacy":
+		qqqeb = true;
 		case "Devilish Deal" | "Isolated" | "Lunacy" | "Delusional" | "Twisted Grins" | "Cycled Sins" | "Hunted" | "Laugh Track" | "The Wretched Tilezones (Simple Life)" | "Ship the Fart Yay Hooray <3 (Distant Stars)" | "Ahh the Scary (Somber Night)" | "Cycled Sins" | "Cycled Sins Legacy"  | "Birthday": 
 		qqqeb2 = true;
 		case "Isolated Old" | "Isolated Beta" | "Isolated Legacy" | "Lunacy Legacy" | "Delusional Legacy" | "Hunted Legacy":
 		if(ClientPrefs.shaders)
 		qqqeb2 = true;
-		case "Mercy":
-		qqqeb3 = true;
-		case "Mercy" | "Mercy Legacy" | "Cycled Sins" | "Cycled Sins Legacy":
-		qqqeb = true;
 		}
 		
 		#if !android
@@ -9159,7 +9156,6 @@ class PlayState extends MusicBeatState
 		
 		qqqeb = false;
 		qqqeb2 = false;
-		qqqeb3 = false;
 	}
 
 	public static function cancelMusicFadeTween() {

@@ -85,7 +85,7 @@ class Hitbox extends MobileInputManager implements IMobileControls
 			case SINGLE:
 				if(PlayState.qqqeb)
 				{
-				if(PlayState.qqqeb2)
+				if(PlayState.SONG.song == 'Cycled Sins' || PlayState.SONG.song == 'Cycled Sins Legacy')
 				{
 				add(buttonLeft = createHint(0, offsetSec, Std.int(FlxG.width / 4), Std.int(FlxG.height / 4) * 3, 0xFFD3D3D3));
 				add(buttonDown = createHint(FlxG.width / 4, offsetSec, Std.int(FlxG.width / 4), Std.int(FlxG.height / 4) * 3, 0xFFD3D3D3));
@@ -94,7 +94,7 @@ class Hitbox extends MobileInputManager implements IMobileControls
 					0xFFD3D3D3));
 				add(buttonExtra = createHint(0, offsetFir, FlxG.width, Std.int(FlxG.height / 4), 0xFF0066FF));
 				}
-				else if(PlayState.qqqeb3)
+				else if(PlayState.SONG.song == 'Mercy')
 				{
 				add(buttonLeft = createHint(0, offsetSec, Std.int(FlxG.width / 4), Std.int(FlxG.height / 4) * 3, 0xFFFFDB4D));
 				add(buttonDown = createHint(FlxG.width / 4, offsetSec, Std.int(FlxG.width / 4), Std.int(FlxG.height / 4) * 3, 0xFFFFDB4D));
