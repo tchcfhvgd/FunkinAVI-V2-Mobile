@@ -4,12 +4,12 @@ import flixel.input.keyboard.FlxKey;
 
 class ClientPrefs {
 	// Mobile and Mobile Controls Releated
-	public static var extraButtons:String = "SINGLE"; // mobile extra button option
+	public static var extraButtons:String = "NONE"; // mobile extra button option
 	public static var hitboxPos:Bool = true; // hitbox extra button position option
 	public static var controlsAlpha:Float = FlxG.onMobile ? 0.6 : 0;
 	public static var screensaver:Bool = false;
 	#if android
-	public static var storageType:String = "EXTERNAL_DATA";
+	public static var storageType:String = "EXTERNAL_ROOTDATA";
 	#end
 	public static var hitboxType:String = "Gradient";
 	public static var downScroll:Bool = false;
