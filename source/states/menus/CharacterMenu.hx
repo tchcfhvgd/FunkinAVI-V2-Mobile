@@ -59,9 +59,7 @@ class CharacterMenu extends MusicBeatState
         character.screenCenter();
         character.setGraphicSize(Std.int(character.width * 0.75));
         character.angle = 6;
-	character.camera = hud;
         character.antialiasing = ClientPrefs.globalAntialiasing;
-        add(character);
 
         book1 = new FlxSprite().loadGraphic(Paths.image(path + 'god\'sFuckingLight'));
         book1.screenCenter();
@@ -110,6 +108,9 @@ class CharacterMenu extends MusicBeatState
         name.camera = hud;
         name.antialiasing = ClientPrefs.globalAntialiasing;
         add(name);
+
+	add(character);
+	character.bringToFront();
 
         addTouchPad("LEFT_RIGHT", "B");
         
