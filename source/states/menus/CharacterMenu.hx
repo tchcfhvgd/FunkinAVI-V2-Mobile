@@ -47,8 +47,8 @@ class CharacterMenu extends MusicBeatState
         hud.bgColor.alpha = 0;
 
         FlxG.cameras.reset(cam);
-        FlxG.cameras.add(hud);
-        FlxCamera.defaultCameras = [cam];
+        FlxG.cameras.add(hud, false);
+        FlxG.cameras.setDefaultDrawTarget(cam, true);
 
         var bg = new FlxSprite().loadGraphic(Paths.image(path + 'infoBase'));
         bg.screenCenter();
@@ -57,7 +57,7 @@ class CharacterMenu extends MusicBeatState
 
         character = new FlxSprite().loadGraphic(Paths.image(path + 'characters/isolatedMick'));
         character.screenCenter().x -= 300;
-        character.setGraphicSize(Std.int(character.width * 0.75));
+        character.setGraphicSize(Std.int(character.width * .75));
         character.angle = 6;
         character.antialiasing = ClientPrefs.globalAntialiasing;
         add(character);
@@ -65,11 +65,11 @@ class CharacterMenu extends MusicBeatState
         book1 = new FlxSprite().loadGraphic(Paths.image(path + 'god\'sFuckingLight'));
         book1.screenCenter();
         book1.blend = ADD;
-        FlxTween.tween(book1, {alpha: 0.65}, 3, {type: 4});
+        FlxTween.tween(book1, {alpha: .65}, 3, {type: 4});
         book1.antialiasing = ClientPrefs.globalAntialiasing;
         add(book1);
 
-        descText = new FlxText(FlxG.width * 0.688, 150, 280).setFormat(Paths.font('Oceanic_Cocktail_Demo.otf'), 23, FlxColor.WHITE, LEFT, OUTLINE, FlxColor.BLACK);
+        descText = new FlxText(FlxG.width * .688, 150, 280).setFormat(Paths.font('Oceanic_Cocktail_Demo.otf'), 23, FlxColor.WHITE, LEFT, OUTLINE, FlxColor.BLACK);
         descText.x -= 28;
         descText.antialiasing = ClientPrefs.globalAntialiasing;
         add(descText);
@@ -110,14 +110,13 @@ class CharacterMenu extends MusicBeatState
         name.antialiasing = ClientPrefs.globalAntialiasing;
         add(name);
 
-        addTouchPad("LEFT_RIGHT", "B");
-        addTouchPadCamera();
-        
         super.create();
 
         name.y -= 10;
 
         changeSelection();
+        
+        addTouchPad("LEFT_RIGHT", "B");
     }
 
     var holdTime:Float = 0;
