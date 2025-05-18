@@ -247,8 +247,11 @@ class MainMenuState extends MusicBeatState
 		changeSelection(0);
 		super.create();
 		
+		if (GameData.episode1FPLock == "unlocked")
+		{
 		addTouchPad("NONE", "E");
 		touchPad.buttonE.y += 240;
+		}
 	}
 
 	override function update(elapsed:Float)
@@ -267,10 +270,13 @@ class MainMenuState extends MusicBeatState
 		if (FlxG.keys.justPressed.R)
 			coolMenuEvents(1);
 
+		if (GameData.episode1FPLock == "unlocked")
+		{
 		if(touchPad != null && touchPad.buttonE.justPressed)
 		{
 		if (!selectedSomethin && GameData.birthdayLocky != "uninvited")
 		coolMenuEvents(5);
+		}
 		}
 		
 		if (FlxG.keys.justPressed.ANY)
