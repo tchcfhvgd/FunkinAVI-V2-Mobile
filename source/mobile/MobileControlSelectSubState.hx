@@ -62,7 +62,7 @@ class MobileControlSelectSubState extends MusicBeatSubstate
 	{
 		super();
 		
-		PlayState.qqqeb = false;
+		PlayState.qqqeb = true;
 
 		bg = new FlxBackdrop(FlxGridOverlay.createGrid(80, 80, 160, 160, true,
 			FlxColor.fromRGB(FlxG.random.int(0, 255), FlxG.random.int(0, 255), FlxG.random.int(0, 255)),
