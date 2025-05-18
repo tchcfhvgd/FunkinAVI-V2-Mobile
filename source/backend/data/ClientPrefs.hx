@@ -9,7 +9,7 @@ class ClientPrefs {
 	public static var controlsAlpha:Float = FlxG.onMobile ? 0.6 : 0;
 	public static var screensaver:Bool = false;
 	#if android
-	public static var storageType:String = "EXTERNAL_ROOTDATA";
+	public static var storageType:String = "EXTERNAL_DATA";
 	#end
 	public static var hitboxType:String = "Gradient";
 	public static var downScroll:Bool = false;
