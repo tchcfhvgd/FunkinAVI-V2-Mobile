@@ -72,8 +72,6 @@ jobs:
           haxelib run lime config ANDROID_NDK_ROOT ${{ steps.setup-ndk.outputs.ndk-path }}
           haxelib run lime config JAVA_HOME $JAVA_HOME_17_X64
           haxelib run lime config ANDROID_SETUP true
-          haxelib set flixel 5.3.1
-          haxelib set flixel-addons 3.1.1<
           haxelib set hxvlc 1.2.0
           
       - name: Compile
