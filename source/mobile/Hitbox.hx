@@ -113,7 +113,9 @@ class Hitbox extends MobileInputManager implements IMobileControls
 				add(buttonExtra = createHint(0, offsetFir, FlxG.width, Std.int(FlxG.height / 4), 0xFF0066FF));
 				}
 				}
-				else if(PlayState.qqqeb2)
+				else if(!PlayState.qqqeb)
+				{
+				if(PlayState.qqqeb2)
 				{
 				add(buttonLeft = createHint(0, 0, Std.int(FlxG.width / 4), FlxG.height, 0xFFD3D3D3));
 				add(buttonDown = createHint(FlxG.width / 4, 0, Std.int(FlxG.width / 4), FlxG.height, 0xFFD3D3D3));
@@ -126,6 +128,7 @@ class Hitbox extends MobileInputManager implements IMobileControls
 				add(buttonDown = createHint(FlxG.width / 4, 0, Std.int(FlxG.width / 4), FlxG.height, 0xFF00FFFF));
 				add(buttonUp = createHint(FlxG.width / 2, 0, Std.int(FlxG.width / 4), FlxG.height, 0xFF12FA05));
 				add(buttonRight = createHint((FlxG.width / 2) + (FlxG.width / 4), 0, Std.int(FlxG.width / 4), FlxG.height, 0xFFF9393F));
+				}
 				}
 				
 			case DOUBLE:
