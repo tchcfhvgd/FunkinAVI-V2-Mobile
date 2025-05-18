@@ -246,6 +246,8 @@ class MainMenuState extends MusicBeatState
 
 		changeSelection(0);
 		super.create();
+		
+		addTouchPad("NONE", "E");
 	}
 
 	override function update(elapsed:Float)
@@ -264,6 +266,12 @@ class MainMenuState extends MusicBeatState
 		if (FlxG.keys.justPressed.R)
 			coolMenuEvents(1);
 
+		if(touchPad != null && touchPad.buttonE.justPressed)
+		{
+		if (!selectedSomethin && GameData.birthdayLocky != "uninvited")
+		coolMenuEvents(5);
+		}
+		
 		if (FlxG.keys.justPressed.ANY)
 		{
 			var hitCorrectKey:Bool = false;

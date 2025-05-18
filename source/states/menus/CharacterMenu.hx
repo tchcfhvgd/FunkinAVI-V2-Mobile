@@ -117,7 +117,6 @@ class CharacterMenu extends MusicBeatState
         changeSelection();
         
         addTouchPad("LEFT_RIGHT", "B");
-		addTouchPadCamera();
     }
 
     var holdTime:Float = 0;
