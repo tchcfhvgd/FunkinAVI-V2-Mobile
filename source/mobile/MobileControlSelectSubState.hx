@@ -62,7 +62,7 @@ class MobileControlSelectSubState extends MusicBeatSubstate
 	{
 		super();
 		
-		PlayState.qqqeb = true;
+		PlayState.qqqebTouchPad = true;
 
 		bg = new FlxBackdrop(FlxGridOverlay.createGrid(80, 80, 160, 160, true,
 			FlxColor.fromRGB(FlxG.random.int(0, 255), FlxG.random.int(0, 255), FlxG.random.int(0, 255)),
@@ -148,7 +148,7 @@ class MobileControlSelectSubState extends MusicBeatSubstate
 			FlxG.sound.play(Paths.sound('cancelMenu'));
 			MobileData.forcedMode = null;
 			close();
-			PlayState.qqqeb = false;
+			PlayState.qqqebTouchPad = false;
 		});
 		exit.color = FlxColor.LIME;
 		exit.setGraphicSize(Std.int(exit.width) * 3);

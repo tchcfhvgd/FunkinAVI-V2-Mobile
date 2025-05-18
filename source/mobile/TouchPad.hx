@@ -123,7 +123,7 @@ class TouchPad extends MobileInputManager implements IMobileControls
 		switch (Extra)
 		{
 			case SINGLE:
-				if(PlayState.qqqeb)
+				if(PlayState.qqqebTouchPad)
 				{
 				if (MobileData.mode != 3)
 				{
