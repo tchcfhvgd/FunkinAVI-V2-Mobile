@@ -169,6 +169,7 @@ class PlayState extends MusicBeatState
 	public var camZoomingDecay:Float = 1;
 	private var curSong:String = "";
 	public static var qqqeb:Bool = false; //躲避键
+	public static var qqqebTouchPad:Bool = false; //躲避键
 	public static var qqqeb2:Bool = false; //hitbox变黑白色
 	public static var qqqeb3:Bool = false; //hitbox变黄色
 
@@ -2312,6 +2313,7 @@ class PlayState extends MusicBeatState
 		{
 		case "Mercy" | "Mercy Legacy" | "Cycled Sins" | "Cycled Sins Legacy":
 		qqqeb = true;
+		qqqebTouchPad = true;
 		}
 		}
 		
@@ -9165,6 +9167,7 @@ class PlayState extends MusicBeatState
 		super.destroy();
 		
 		qqqeb = false;
+		qqqebTouchPad = false;
 		qqqeb2 = false;
 		qqqeb3 = false;
 	}
