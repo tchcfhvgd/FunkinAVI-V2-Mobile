@@ -603,8 +603,11 @@ class FreeplayState extends MusicBeatState
 			disc.angle += Conductor.crochet / 1000 * 2;
 		}
 
+		if (freeplayMenuList != 2)
+		{
 		if (FlxG.keys.justPressed.B || touchPad.buttonZ.justPressed) {
 			changeBotPlay();
+		}
 		}
 
 		if (ClientPrefs.shaders) // bye bye lag
