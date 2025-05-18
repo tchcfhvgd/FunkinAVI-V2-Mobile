@@ -56,9 +56,8 @@ class CharacterMenu extends MusicBeatState
         add(bg);
 
         character = new FlxSprite().loadGraphic(Paths.image(path + 'characters/isolatedMick'));
-        character.screenCenter();
-        character.x += 300;
-        character.setGraphicSize(Std.int(character.width * .75));
+        character.screenCenter().x -= 300;
+        character.setGraphicSize(Std.int(character.width * 0.75));
         character.angle = 6;
         character.antialiasing = ClientPrefs.globalAntialiasing;
         add(character);
@@ -66,11 +65,11 @@ class CharacterMenu extends MusicBeatState
         book1 = new FlxSprite().loadGraphic(Paths.image(path + 'god\'sFuckingLight'));
         book1.screenCenter();
         book1.blend = ADD;
-        FlxTween.tween(book1, {alpha: .65}, 3, {type: 4});
+        FlxTween.tween(book1, {alpha: 0.65}, 3, {type: 4});
         book1.antialiasing = ClientPrefs.globalAntialiasing;
         add(book1);
 
-        descText = new FlxText(FlxG.width * .688, 150, 280).setFormat(Paths.font('Oceanic_Cocktail_Demo.otf'), 23, FlxColor.WHITE, LEFT, OUTLINE, FlxColor.BLACK);
+        descText = new FlxText(FlxG.width * 0.688, 150, 280).setFormat(Paths.font('Oceanic_Cocktail_Demo.otf'), 23, FlxColor.WHITE, LEFT, OUTLINE, FlxColor.BLACK);
         descText.x -= 28;
         descText.antialiasing = ClientPrefs.globalAntialiasing;
         add(descText);
