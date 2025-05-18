@@ -248,6 +248,7 @@ class MainMenuState extends MusicBeatState
 		super.create();
 		
 		addTouchPad("NONE", "E");
+		touchPad.buttonE.y += 240;
 	}
 
 	override function update(elapsed:Float)

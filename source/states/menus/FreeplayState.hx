@@ -603,7 +603,7 @@ class FreeplayState extends MusicBeatState
 			disc.angle += Conductor.crochet / 1000 * 2;
 		}
 
-		if (FlxG.keys.justPressed.B) {
+		if (FlxG.keys.justPressed.B || touchPad.buttonZ.justPressed) {
 			changeBotPlay();
 		}
 
@@ -660,7 +660,7 @@ class FreeplayState extends MusicBeatState
 		var ctrl = FlxG.keys.justPressed.CONTROL || touchPad.buttonC.justPressed;
 
 		var shiftMult:Int = 1;
-		if(FlxG.keys.pressed.SHIFT || touchPad.buttonZ.pressed) shiftMult = 3;
+		if(FlxG.keys.pressed.SHIFT) shiftMult = 3;
 
 		if(songs.length > 1)
 		{
