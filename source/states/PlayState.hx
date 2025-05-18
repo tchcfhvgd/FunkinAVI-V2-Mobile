@@ -12547,6 +12547,7 @@ class PlayState extends MusicBeatState
 						{
 							bg1.visible = false;
 							bg2.visible = true;
+							if (ClientPrefs.shaders)
 							bg2.shader = glitchBG;
 						}
 					}

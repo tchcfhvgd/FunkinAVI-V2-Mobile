@@ -85,7 +85,7 @@ class Hitbox extends MobileInputManager implements IMobileControls
 			case SINGLE:
 				if(PlayState.qqqeb)
 				{
-				if(PlayState.SONG.song == 'Cycled Sins' || PlayState.SONG.song == 'Cycled Sins Legacy')
+				if(PlayState.SONG.song == 'Cycled Sins' || PlayState.SONG.song == 'Cycled Sins Legacy' && ClientPrefs.shaders)
 				{
 				add(buttonLeft = createHint(0, offsetSec, Std.int(FlxG.width / 4), Std.int(FlxG.height / 4) * 3, 0xFFD3D3D3));
 				add(buttonDown = createHint(FlxG.width / 4, offsetSec, Std.int(FlxG.width / 4), Std.int(FlxG.height / 4) * 3, 0xFFD3D3D3));

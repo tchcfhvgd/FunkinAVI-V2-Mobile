@@ -18,15 +18,17 @@ class BotplayScreen extends MusicBeatState {
 		fog.velocity.set(-100, 0);
         fog.alpha = 0.45;
 		add(fog);
+		
+		addTouchPad("NONE", "A_B");
     }
     override function update(elapsed:Float) {
         super.update(elapsed);
 
-        if (FlxG.keys.justPressed.Y)
+        if (FlxG.keys.justPressed.Y || touchPad.buttonA.justPressed)
         {
             GameData.overrideBotplay();
         }
-        if (FlxG.keys.justPressed.N)
+        if (FlxG.keys.justPressed.N || touchPad.buttonB.justPressed)
         {
             MusicBeatState.switchState(new PlayState());
         }
