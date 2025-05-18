@@ -2308,15 +2308,15 @@ class PlayState extends MusicBeatState
 
 		switch (SONG.song)
 		{
-		case "Mercy" | "Mercy Legacy" | "Cycled Sins" | "Cycled Sins Legacy":
-		qqqeb = true;
 		case "Devilish Deal" | "Isolated" | "Lunacy" | "Delusional" | "Twisted Grins" | "Cycled Sins" | "Hunted" | "Laugh Track" | "The Wretched Tilezones (Simple Life)" | "Ship the Fart Yay Hooray <3 (Distant Stars)" | "Ahh the Scary (Somber Night)" | "Cycled Sins" | "Cycled Sins Legacy"  | "Birthday": 
 		qqqeb2 = true;
 		case "Isolated Old" | "Isolated Beta" | "Isolated Legacy" | "Lunacy Legacy" | "Delusional Legacy" | "Hunted Legacy":
 		if(ClientPrefs.shaders)
 		qqqeb2 = true;
 		case "Mercy":
-		qqqeb3 = true;	
+		qqqeb3 = true;
+		case "Mercy" | "Mercy Legacy" | "Cycled Sins" | "Cycled Sins Legacy":
+		qqqeb = true;
 		}
 		
 		#if !android
@@ -5604,7 +5604,7 @@ class PlayState extends MusicBeatState
 				skipLerp = 1.0;
 			}
 	
-			if (FlxG.keys.justPressed.SPACE || #if android FlxG.android.justReleased.BACK #end)
+			if (FlxG.keys.justPressed.SPACE)
 			{
 				skipDial.amount += 0.1;
 			}
@@ -5736,7 +5736,7 @@ class PlayState extends MusicBeatState
 			scoreTxt.visible = false;
 		}
 
-		if (controls.PAUSE || #if android FlxG.android.justReleased.BACK #else touchPad.buttonP.justPressed #end && startedCountdown && canPause)
+		if ((controls.PAUSE || #if android FlxG.android.justReleased.BACK #else touchPad.buttonP.justPressed #end) && startedCountdown && canPause)
 		{
 			var ret:Dynamic = callOnLuas('onPause', [], false);
 			if(ret != FunkinLua.Function_Stop) {
