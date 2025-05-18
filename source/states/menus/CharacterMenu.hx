@@ -56,10 +56,10 @@ class CharacterMenu extends MusicBeatState
         add(bg);
         
         character = new FlxSprite().loadGraphic(Paths.image(path + 'characters/isolatedMick'));
-        character.screenCenter().x -= 300;
+        character.screenCenter();
+        character.x -= 300;
         character.setGraphicSize(Std.int(character.width * .75));
         character.angle = 6;
-        character.camera = hud;
         character.antialiasing = ClientPrefs.globalAntialiasing;
         add(character);
 
@@ -117,7 +117,7 @@ class CharacterMenu extends MusicBeatState
 
         changeSelection();
         
-        addTouchPad("LEFT_RIGHT", "B");
+        //addTouchPad("LEFT_RIGHT", "B");
     }
 
     var holdTime:Float = 0;

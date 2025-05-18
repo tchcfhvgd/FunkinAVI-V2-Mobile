@@ -72,7 +72,6 @@ jobs:
           haxelib run lime config ANDROID_NDK_ROOT ${{ steps.setup-ndk.outputs.ndk-path }}
           haxelib run lime config JAVA_HOME $JAVA_HOME_17_X64
           haxelib run lime config ANDROID_SETUP true
-          haxelib set hxvlc 1.2.0
           
       - name: Compile
         run: haxelib run lime build android
