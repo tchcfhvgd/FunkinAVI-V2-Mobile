@@ -2308,9 +2308,11 @@ class PlayState extends MusicBeatState
 
 		switch (SONG.song)
 		{
-		case "Mercy" | "Mercy Legacy" | "Cycled Sins" | "Cycled Sins Legacy":
 		if(ClientPrefs.mechanics)
+		{
+		case "Mercy" | "Mercy Legacy" | "Cycled Sins" | "Cycled Sins Legacy":
 		qqqeb = true;
+		}
 		case "Devilish Deal" | "Isolated" | "Lunacy" | "Delusional" | "Twisted Grins" | "Cycled Sins" | "Hunted" | "Laugh Track" | "The Wretched Tilezones (Simple Life)" | "Ship the Fart Yay Hooray <3 (Distant Stars)" | "Ahh the Scary (Somber Night)" | "Birthday": 
 		qqqeb2 = true;
 		case "Isolated Old" | "Isolated Beta" | "Isolated Legacy" | "Lunacy Legacy" | "Delusional Legacy" | "Hunted Legacy" | "Cycled Sins Legacy":
@@ -11589,7 +11591,7 @@ class PlayState extends MusicBeatState
 					if (curBeat >= 0 && curBeat <= 63)
 						healthThing -= 0.02;
 					else if (curBeat >= 64 && curBeat <= 95)
-						healthThing -= 0.2;
+						healthThing -= 0.18;
 					else if (curBeat >= 96 && curBeat <= 127)
 						healthThing -= 0.06;
 					else if (curBeat >= 128 && curBeat <= 191)
@@ -11597,7 +11599,7 @@ class PlayState extends MusicBeatState
 					else if (curBeat >= 192 && curBeat <= 255)
 						healthThing -= 0.1;
 					else if (curBeat >= 256 && curBeat <= 319)
-						healthThing -= 0.18;
+						healthThing -= 0.15;
 					else if (curBeat >= 320)
 						healthThing -= 0.01;
 				}
