@@ -2306,13 +2306,17 @@ class PlayState extends MusicBeatState
 
 		// startCountdown();
 
-		switch (SONG.song)
-		{
 		if(ClientPrefs.mechanics)
+		{
+		switch (SONG.song)
 		{
 		case "Mercy" | "Mercy Legacy" | "Cycled Sins" | "Cycled Sins Legacy":
 		qqqeb = true;
 		}
+		}
+		
+		switch (SONG.song)
+		{
 		case "Devilish Deal" | "Isolated" | "Lunacy" | "Delusional" | "Twisted Grins" | "Cycled Sins" | "Hunted" | "Laugh Track" | "The Wretched Tilezones (Simple Life)" | "Ship the Fart Yay Hooray <3 (Distant Stars)" | "Ahh the Scary (Somber Night)" | "Birthday": 
 		qqqeb2 = true;
 		case "Isolated Old" | "Isolated Beta" | "Isolated Legacy" | "Lunacy Legacy" | "Delusional Legacy" | "Hunted Legacy" | "Cycled Sins Legacy":
