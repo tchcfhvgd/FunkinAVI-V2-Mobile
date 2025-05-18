@@ -47,8 +47,8 @@ class CharacterMenu extends MusicBeatState
         hud.bgColor.alpha = 0;
 
         FlxG.cameras.reset(cam);
-        FlxG.cameras.add(hud, false);
-        FlxG.cameras.setDefaultDrawTarget(cam, true);
+        FlxG.cameras.add(hud);
+        FlxCamera.defaultCameras = [cam];
 
         var bg = new FlxSprite().loadGraphic(Paths.image(path + 'infoBase'));
         bg.screenCenter();
@@ -56,10 +56,11 @@ class CharacterMenu extends MusicBeatState
         add(bg);
 
         character = new FlxSprite().loadGraphic(Paths.image(path + 'characters/isolatedMick'));
-        character.screenCenter();
+        character.screenCenter().x -= 300;
         character.setGraphicSize(Std.int(character.width * 0.75));
         character.angle = 6;
         character.antialiasing = ClientPrefs.globalAntialiasing;
+        add(character);
 
         book1 = new FlxSprite().loadGraphic(Paths.image(path + 'god\'sFuckingLight'));
         book1.screenCenter();
@@ -110,10 +111,9 @@ class CharacterMenu extends MusicBeatState
         add(name);
 
         addTouchPad("LEFT_RIGHT", "B");
+        addTouchPadCamera();
         
         super.create();
-
-	add(character);
 
         name.y -= 10;
 
