@@ -1,7 +1,10 @@
 package states.menus;
 
 import flixel.tweens.FlxTween;
+import flixel.tweens.FlxEase;
 import flixel.util.FlxColor;
+import flixel.util.FlxTimer;
+import flixel.util.FlxMath;
 import flixel.FlxG;
 import flixel.FlxCamera;
 import sys.io.File;
@@ -10,7 +13,7 @@ import flixel.text.FlxText;
 import flixel.FlxSprite;
 
 // prob gonna keep jsons and then hardcode it cus thats pretty smart
-typedef CharMenuThing = { info:Array<Dynamic> };
+class CharacterMenu extends states.MusicBeatState 
 
 // DEMOLITION IF YOU READ THIS DONT PUT ANY SHADER IT LOOKS PERFECT ALREADY RAHAHH
 class CharacterMenu extends MusicBeatState 
@@ -56,8 +59,7 @@ class CharacterMenu extends MusicBeatState
         add(bg);
         
         character = new FlxSprite().loadGraphic(Paths.image(path + 'characters/isolatedMick'));
-        character.screenCenter();
-        character.x -= 300;
+        character.screenCenter().x -= 300;
         character.setGraphicSize(Std.int(character.width * .75));
         character.angle = 6;
         character.antialiasing = ClientPrefs.globalAntialiasing;
@@ -117,7 +119,7 @@ class CharacterMenu extends MusicBeatState
 
         changeSelection();
         
-        //addTouchPad("LEFT_RIGHT", "B");
+        addTouchPad("LEFT_RIGHT", "B");
     }
 
     var holdTime:Float = 0;
