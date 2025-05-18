@@ -56,9 +56,10 @@ class CharacterMenu extends MusicBeatState
         add(bg);
         
         character = new FlxSprite().loadGraphic(Paths.image(path + 'characters/isolatedMick'));
-        character.screenCenter();
+        character.screenCenter().x -= 300;
         character.setGraphicSize(Std.int(character.width * .75));
         character.angle = 6;
+        character.camera = hud;
         character.antialiasing = ClientPrefs.globalAntialiasing;
         add(character);
 
