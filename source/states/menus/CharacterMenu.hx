@@ -109,12 +109,11 @@ class CharacterMenu extends MusicBeatState
         name.antialiasing = ClientPrefs.globalAntialiasing;
         add(name);
 
-	add(character);
-	character.bringToFront();
-
         addTouchPad("LEFT_RIGHT", "B");
         
         super.create();
+
+	add(character);
 
         name.y -= 10;
 
