@@ -34,12 +34,6 @@ class VideoSprite extends FlxVideoSprite
         if (destroyOnUse) bitmap.onEndReached.add(() -> destroy());
     }
 
-    override function update(e:Float){
-	    if (FlxG.android.justReleased.BACK){
-		    bitmap.stop();
-	    }
-    }
-
     public override function load(location:String, ?options:Array<String>):Bool
     {
         var b:Bool = super.load(location,options);
