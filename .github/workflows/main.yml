@@ -26,9 +26,9 @@ jobs:
         uses: actions/checkout@main
 
       - name: Setup Haxe
-        uses: krdlab/setup-haxe@v1
+        uses: krdlab/setup-haxe@master
         with:
-          haxe-version: 4.2.5
+          haxe-version: 4.3.6
       
       - name: Setting up Android NDK
         id: setup-ndk
@@ -51,7 +51,7 @@ jobs:
       - name: Install Haxelib
         run: |
           haxelib setup ~/haxelib
-          haxelib git hxcpp https://github.com/beihu235/hxcpp
+          haxelib git hxcpp https://github.com/Ajwyunsx/hxcpp
           haxelib git lime https://github.com/VapireMox/lime
           haxelib install openfl 9.2.2
           haxelib install flixel 5.3.1
