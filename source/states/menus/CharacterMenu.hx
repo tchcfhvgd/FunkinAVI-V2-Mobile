@@ -55,13 +55,6 @@ class CharacterMenu extends MusicBeatState
         bg.antialiasing = ClientPrefs.globalAntialiasing;
         add(bg);
 
-        character = new FlxSprite().loadGraphic(Paths.image(path + 'characters/isolatedMick'));
-        character.screenCenter().x -= 300;
-        character.setGraphicSize(Std.int(character.width * .75));
-        character.angle = 6;
-        character.antialiasing = ClientPrefs.globalAntialiasing;
-        add(character);
-
         book1 = new FlxSprite().loadGraphic(Paths.image(path + 'god\'sFuckingLight'));
         book1.screenCenter();
         book1.blend = ADD;
@@ -103,6 +96,13 @@ class CharacterMenu extends MusicBeatState
             FlxTween.tween(spotlight, {alpha: 0.15}, 2, {ease: FlxEase.circInOut});
         });
 
+        character = new FlxSprite().loadGraphic(Paths.image(path + 'characters/isolatedMick'));
+        character.screenCenter().x -= 300;
+        character.setGraphicSize(Std.int(character.width * .75));
+        character.angle = 6;
+        character.antialiasing = ClientPrefs.globalAntialiasing;
+        add(character);
+        
         name = new FlxText(0, 40, 1280).setFormat(Paths.font('infoMenu.ttf'), 33, FlxColor.WHITE, CENTER, OUTLINE, FlxColor.BLACK);
         name.screenCenter(X);
         name.alignment = CENTER;
