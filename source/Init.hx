@@ -27,7 +27,7 @@ class Init extends FlxState
 
 		AppIcon.changeIcon("newIcon");
 		
-		//CoolUtil.createCoreFile();
+		CoolUtil.createCoreFile();
 
         if (FlxG.save.data.weekCompleted != null) StoryMenuState.weekCompleted = FlxG.save.data.weekCompleted;
 
