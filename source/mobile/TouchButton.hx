@@ -717,4 +717,3 @@ enum StatusIndicators
 	// used when u make ur own status indicator like in hitbox
 	NONE;
 }
-#end
