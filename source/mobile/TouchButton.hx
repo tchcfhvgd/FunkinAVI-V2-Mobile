@@ -421,16 +421,8 @@ class TypedTouchButton<T:FlxSprite> extends FlxSprite implements IFlxInput
 	{
 		if (_spriteLabel != null)
 		{
-			if (Options.oldPadTexture)
-			{
-				_spriteLabel.x = (pixelPerfectPosition ? Math.floor(x) : x) + labelOffsets[status].x;
-				_spriteLabel.y = (pixelPerfectPosition ? Math.floor(y) : y) + labelOffsets[status].y;
-			}
-			else
-			{
 				_spriteLabel.x = ((width - _spriteLabel.width) / 2) + (pixelPerfectPosition ? Math.floor(x) : x);
 				_spriteLabel.y = ((height - _spriteLabel.height) / 2) + (pixelPerfectPosition ? Math.floor(y) : y);
-			}
 		}
 	}
 
@@ -515,29 +507,15 @@ class TypedTouchButton<T:FlxSprite> extends FlxSprite implements IFlxInput
 	function set_status(Value:Int):Int
 	{
 		status = Value;
-		if (Options.oldPadTexture)
-		{
-			if (_spriteLabel != null && labelAlphas.length > status)
-				_spriteLabel.alpha = alpha * labelAlphas[status];
-		}
-		else
-			indicateStatus();
+		indicateStatus();
 		return status;
 	}
 
 	override function set_alpha(Value:Float):Float
 	{
 		super.set_alpha(Value);
-		if (Options.oldPadTexture)
-		{
-			if (_spriteLabel != null && labelAlphas.length > status)
-				_spriteLabel.alpha = alpha * labelAlphas[status];
-		}
-		else
-		{
 			if (_spriteLabel != null && canChangeLabelAlpha)
 				_spriteLabel.alpha = alpha == 0 ? 0 : alpha + labelStatusDiff;
-		}
 		return alpha;
 	}
 
