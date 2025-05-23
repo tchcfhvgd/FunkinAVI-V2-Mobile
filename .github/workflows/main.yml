@@ -26,7 +26,7 @@ jobs:
         uses: actions/checkout@main
 
       - name: Setup Haxe
-        uses: krdlab/setup-haxe@38fd78cc3a7960b281cf4a33a63a9c1543ac4598
+        uses: krdlab/setup-haxe@master
         with:
           haxe-version: 4.3.7
       
@@ -54,9 +54,9 @@ jobs:
           haxelib git hxcpp https://github.com/Ajwyunsx/hxcpp
           haxelib git lime https://github.com/VapireMox/lime
           haxelib install openfl 9.2.2
-          haxelib install flixel 5.3.1
+          haxelib install flixel 5.2.2
           haxelib install flixel-ui 2.5.0
-          haxelib install flixel-addons 3.1.1
+          haxelib install flixel-addons 3.0.2
           haxelib install hxvlc 1.2.0
           haxelib install hscript 2.5.0
           haxelib install flixel-tools 1.5.1
